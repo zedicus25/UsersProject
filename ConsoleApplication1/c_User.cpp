@@ -16,6 +16,14 @@ c_User::c_User(long id, std::string name, std::string last_name, int age)
 	this->age = age;
 }
 
+c_User::c_User(c_User& copy)
+{
+	this->id = copy.getId();
+	this->name = copy.getName();
+	this->last_name = copy.getLastName();
+	this->age = copy.getAge();
+}
+
 std::ostream& operator<<(std::ostream& out, const c_User us)
 {
 	out << "Last name: " << us.getLastName() << "\n";

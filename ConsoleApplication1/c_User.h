@@ -10,6 +10,7 @@ private:
 public:
 	c_User();
 	c_User(long id,std::string name, std::string last_name, int age);
+	c_User(c_User& copy);
 
 	//gets
 	inline std::string getName() const {
@@ -37,5 +38,7 @@ public:
 	}
 
 	friend std::ostream& operator << (std::ostream& out, const c_User us);
+
+
 };
 
