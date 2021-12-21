@@ -1,6 +1,19 @@
 ﻿#include <iostream>
-
+#include "c_UsersBD.h"
 int main()
 {
-    std::cout << "Hello World!\n";
+    c_UsersBD bd;
+    bd.load();
+	for (int i = 0; i < bd.getSize(); i++)
+	{
+		std::cout << bd[i];
+	}
+	system("pause");
+	system("cls");
+	
+	bd.remove(2);
+	for (int i = 0; i < bd.getSize(); i++)
+	{
+		std::cout << bd[i];
+	}
 }

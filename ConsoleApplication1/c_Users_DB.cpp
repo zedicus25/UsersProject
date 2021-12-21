@@ -3,7 +3,7 @@
 c_Users_DB::c_Users_DB()
 {
 	this->size = 0;
-	this->users = new c_User[size];
+	this->users = new c_User[0];
 }
 
 void c_Users_DB::add(c_User& user)
@@ -15,6 +15,7 @@ void c_Users_DB::add(c_User& user)
 	}
 
 	this->size++;
+	this->users = nullptr;
 	this->users = new c_User[size];
 
 	for (int i = 0; i < this->size-1; i++)
@@ -29,7 +30,7 @@ void c_Users_DB::add(c_User& user)
 void c_Users_DB::save()
 {
 	FILE* pf;
-	fopen_s(&pf, "File.txt", "wb");
+	fopen_s(&pf, "E:\\Project C++\\Step\\Homeworks\\UsersProject\\File.txt", "wb");
 	if (pf) {
 		fwrite(&this->size, sizeof(int), 1, pf);
 		fwrite(users, this->size * sizeof(c_User), 1, pf);
