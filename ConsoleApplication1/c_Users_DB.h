@@ -15,7 +15,12 @@ public:
 		return this->size;
 	}
 
-	
+	c_User& operator[](const int index);
+
+	~c_Users_DB()
+	{
+		delete[] this->users;
+	}
 
 };
 

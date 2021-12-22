@@ -16,5 +16,13 @@ public:
 	void load();
 	void remove(int index);
 	void remove(c_User& user);
+	void save();
+
+	c_User getById(int id);
+
+	~c_UsersBD()
+	{
+		delete[] this->users;
+	}
 };
 

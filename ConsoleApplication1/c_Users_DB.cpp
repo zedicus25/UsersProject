@@ -37,3 +37,16 @@ void c_Users_DB::save()
 		fclose(pf);
 	}
 }
+
+c_User& c_Users_DB::operator[](const int index)
+{
+	if (index < this->size) {
+		return users[index];
+	}
+	else {
+		std::cout << "Out of bunds array\n";
+		return users[0];
+	}
+}
+
+
