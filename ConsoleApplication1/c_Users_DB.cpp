@@ -23,6 +23,7 @@ void c_Users_DB::add(c_User& user)
 		this->users[i] = tmp[i];
 	}
 	c_User use(user);
+	use.setId(size);
 	this->users[size-1] = use;
 	delete[] tmp;
 }

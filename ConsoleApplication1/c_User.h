@@ -22,7 +22,7 @@ public:
 	inline int getAge()const {
 		return this->age;
 	}
-	inline int getId() const {
+	inline long getId() const {
 		return this->id;
 	}
 
@@ -35,6 +35,9 @@ public:
 	}
 	inline void setAge(int age) {
 		this->age = age;
+	}
+	inline void setId(long id) {
+		this->id = id;
 	}
 
 	friend std::ostream& operator << (std::ostream& out, const c_User us);
